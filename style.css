@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 600px;
+    margin: 50px auto;
+}
+
+.container .img-holder {
+    position: relative;
+    height: 300px;
+    width: 100%;
+
+}
+
+.container .img-holder .slide-num {
+    position: absolute;
+    z-index: 3;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    left: 8px;
+    top: 8px;
+}
+
+.container .img-holder img {
+    width: 600px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    height: 300px;
+}
+
+.container .img-holder img.active {
+    opacity: 1;
+}
+
+.container .control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+@media (max-width:767px) {
+    .container {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+    }
+
+    .container .img-holder img {
+        width: 100%;
+    }
+}
+
+.container .control .previous,
+.container .control .next {
+    background-color: #00563B;
+    padding: 10px 22px;
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    user-select: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.container .control .previous.disabled,
+.container .control .next.disabled {
+    background-color: #00563b6b;
+    cursor: not-allowed;
+}
+
+.container .control ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 7px;
+}
+
+.container .control ul li {
+    background-color: #edecec;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.container .control ul li.active {
+    color: white;
+    background-color: #00563B;
+}
+
+@media (max-width:767px) {
+    .container .control ul {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .container .control ul li {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .container .control .previous,
+    .container .control .next {
+        padding: 10px 22px;
+        width: 100px;
+    }
+}
