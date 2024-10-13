@@ -4,7 +4,7 @@ A simple, responsive, and lightweight image slider built with HTML, CSS, and Jav
 
 ## Live Demo
 
-[View Live Demo]()
+[View Live Demo](https://shahenda-elshayal.github.io/vanilla-js-image-slider/)
 
 ## Features
 
